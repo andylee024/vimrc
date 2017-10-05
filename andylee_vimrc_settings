@@ -1,0 +1,34 @@
+" Basic VIMRC file for andy 
+
+" syntax highlighting
+syntax on
+
+" searching
+set smartcase       "ignores case if search pattern is all lowercase 
+
+" indent
+set autoindent
+set smartindent
+
+" whitespace 
+set tabstop=4       "tab is four spaces 
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Enables use of mouse for all modes
+set mouse=a 
+
+" Display line numbers on the left
+set number
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" Set solarized colorscheme
+execute pathogen#infect()
+set background=light
+let g:solarized_termcolors=256
+colorscheme solarized
+
+:set cino=(0
