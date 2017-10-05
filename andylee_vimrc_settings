@@ -1,34 +1,69 @@
-" Basic VIMRC file for andy 
+" Andy Lee's vimrc settings
 
-" syntax highlighting
+
+""""""""""""""""""""""""""""""""
+" Default settings vim
+""""""""""""""""""""""""""""""""
+
+" Disable vi compatibility
+set nocompatible
+
+" Requisite for plugin loading
+filetype off
+
+" Syntax highlighting
 syntax on
 
-" searching
-set smartcase       "ignores case if search pattern is all lowercase 
+""""""""""""""""""""""""""""""""
+" Plugin Begin
+""""""""""""""""""""""""""""""""
+" Vundle management
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" indent
-set autoindent
-set smartindent
+" Vundle Plugin
+Plugin 'VundleVim/Vundle.vim'
 
-" whitespace 
-set tabstop=4       "tab is four spaces 
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+" Colorscheme Plugin
+Plugin 'altercation/vim-colors-solarized'
 
-" Enables use of mouse for all modes
-set mouse=a 
+" General Programming Plugin
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 
-" Display line numbers on the left
-set number
+"Python
+Plugin 'tmhedberg/SimpylFold'
 
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
+call vundle#end()
+filetype plugin indent on
 
-" Set solarized colorscheme
-execute pathogen#infect()
+""""""""""""""""""""""""""""""""
+" Color Scheme
+""""""""""""""""""""""""""""""""
+syntax enable
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
 
-:set cino=(0
+""""""""""""""""""""""""""""""""
+" General Settings
+""""""""""""""""""""""""""""""""
+
+" Set spacing to 4
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Set indent
+set autoindent
+set smartindent
+
+" Set search
+set smartcase " Ignore case if search pattern is all lowercase
+
+" Set line numbers
+set number
+
+" Allow backspacing over autoindent, line breaks
+set backspace=indent,eol,start
